@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area-051</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game.css">
+    <style>
+        /* Style for the modal container */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: black;
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            z-index: 100;
+        }
+
+        /* Style for the backdrop */
+        #modal-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 99;
+        }
+
+        /* Close button for modal */
+        .close-button {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="header">Area-051</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Game Info</a></li>
+            <li><a href="#">Leaderboard</a></li>
+        </ul>
+    </div>
+
+    <div class="desktop_buttons">
+        <table class="desktop_buttons_table">
+            <tr>
+                <td>
+                    <button class="mission_notes_button" onclick="openMissionNotes()">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248321.png" alt="Mission Notes">
+                        <span>
+                            mission_notes.txt
+                        </span>
+                    </button>
+                    <button class="terminal_button">
+                        <img src="https://user-images.githubusercontent.com/7389110/58056685-eec98200-7b59-11e9-99e0-fd327b3e22e4.png">
+                        <span>
+                            terminal.exe
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="chatbot-container">
+        <form id="forum-form">
+            <textarea id="post-content" placeholder="Mission Control" rows="4"></textarea>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        <div id="posts-container"></div>
+        <div id="ai-response"></div>
+    </div>
+
+    <!-- Modal backdrop -->
+    <div id="modal-backdrop"></div>
+
+    <!-- Modal content -->
+    <div id="modal">
+        <h1 style="text-align: center;">Mission Notes</h1>
+        <p style="text-align: center;">
+            Your objective is to stop the alien from ending all of humanity, & close as many wormholes as you can. We didn't even consider sending you out to the front-lines; you won't last 2 minutes. Mission control will be available in the bottom right corner of the screen. 
+            (The code has temporarily been removed due to "bug fixing", and 100% not because all of the code for it is on the computer at my dad's house and not my mom's, and I forgot to transfer it over — which is 100% not my fault, by the way). 
+            And remember, we are always watching you.
+        </p>
+        <button class="close-button" onclick="closeModal()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 [LEGAL NAME REDACTED]. All Rights Reserved.</p>
+    </footer>
+
+    <audio id="bgmusic" autoplay loop>
+        <source src="../files/main_menu_song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>    
+
+    <script src="main.js" type="module">
+
+    </script>
+</body>
+</html>

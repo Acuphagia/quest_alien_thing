@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Mission Notes</title>
+    <style>
+        /* Style for the modal container */
+        #modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            z-index: 100;
+        }
+
+        /* Style for the backdrop */
+        #modal-backdrop {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 99;
+        }
+
+        /* Button styles */
+        .mission_notes_button {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Close button for modal */
+        .close-button {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button to open the modal -->
+    <button class="mission_notes_button" onclick="openMissionNotes()">Open Mission Notes</button>
+
+    <!-- Modal backdrop -->
+    <div id="modal-backdrop"></div>
+
+    <!-- Modal content -->
+    <div id="modal">
+        <h1>Mission Notes</h1>
+        <p>This is your mission_notes.txt file.</p>
+        <button class="close-button" onclick="closeModal()">Close</button>
+    </div>
+
+    <script>
+        // Function to open the modal
+        function openMissionNotes() {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('modal-backdrop').style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('modal-backdrop').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+body {   
+    background-image: url('https://media1.giphy.com/media/eFvs5iE6a6ntVIRaEN/giphy.gif?cid=6c09b952tv08dyhs7qwcuqq6rsvim2s0zkwhdr4uh5m4g3gs&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nav-links {
+    text-align: justify;
+    position: absolute;
+    right: 1%;
+}
+
+.desktop_buttons {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    display: flex; /* Align buttons horizontally */
+    gap: 5%; /* Add space between buttons */
+}
+
+.mission_notes_button, .terminal_button {
+    display: inline-flex; /* Shrink-wrap to fit content */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    width: auto; /* Let content determine width */
+    height: auto; /* Let content determine height */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: clamp(1rem, 1.5vw, 2rem); /* Ensure font size is responsive yet controlled */
+    text-align: center;
+    gap: 0.5vw; /* Space between image and text */
+    font-family: Elixia;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.mission_notes_button:hover, .terminal_button:hover {
+    transform: scale(1.1); /* Adjusted to avoid excessive enlargement */
+    box-shadow: 0 0 3vw 1vw rgba(0, 255, 255, 0.8); /* Glowing effect */
+}
+
+.mission_notes_button img, .terminal_button img {
+    max-width: 100%; /* Prevent image from exceeding container dimensions */
+    width: clamp(50px, 5vw, 100px); /* Ensure responsive image size */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+.button_text {
+    display: block;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    width: 20vw; /* Responsive width */
+    padding: 2%; /* Padding for spacing */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    border: 0.2vw solid #800080; /* Purple border */
+    border-radius: 2vw; /* Rounded corners */
+    box-shadow: 0 0 3vw #800080; /* Purple glow effect */
+    color: white;
+    font-family: Arial, sans-serif;
+    z-index: 100;
+
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+textarea#post-content {
+    width: 90%; /* Fill most of the container */
+    resize: none;
+    border: 0.2vw solid #800080; /* Responsive border width */
+    border-radius: 0.5vw; /* Rounded corners */
+    padding: 2%; /* Spacing inside textarea */
+    background: black;
+    color: white;
+    font-size: 1vw; /* Responsive font size */
+    margin-bottom: 2%; /* Spacing below the textarea */
+    text-align: center;
+}
+
+button.submit-button {
+    width: 90%; /* Match textarea width */
+    padding: 2%; /* Padding for spacing */
+    border: none;
+    border-radius: 0.5vw; /* Rounded corners */
+    background-color: #800080; /* Purple background */
+    color: white;
+    cursor: pointer;
+    font-size: 1.5vw; /* Responsive font size */
+    font-weight: bold;
+}
+
+button.submit-button:hover {
+    background-color: #800080; /* Hover color */
+    transform: scale(1.2); /* Enlarge on hover */
+    box-shadow: 0 0 3vw 1vw rgba(0, 255, 255, 0.8); /* Glow effect */
+}
+
+#posts-container {
+    margin-top: 2%; /* Space between posts and other content */
+}
+
+.post {
+    padding: 2%; /* Spacing inside the post */
+    margin: 1% 0; /* Vertical spacing between posts */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border: 0.2vw solid #800080; /* Border for posts */
+    border-radius: 0.5vw; /* Rounded corners */
+}
+
+.post-content {
+    color: white;
+    font-size: 1vw; /* Responsive font size */
+    font-family: Arial, sans-serif;
+}
+
+#ai-response {
+    margin-top: 2%; /* Space above response */
+    padding: 2%; /* Padding inside response container */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border: 0.2vw solid #800080; /* Purple border */
+    border-radius: 0.5vw; /* Rounded corners */
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 1vw; /* Responsive font size */
+}

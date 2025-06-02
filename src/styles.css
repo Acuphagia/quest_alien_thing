@@ -1,0 +1,189 @@
+/* General Reset */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(10, 10, 20);
+    font-family: "Nunito", sans-serif;
+    color: #fff;
+    background-image: url("https://cdn.pixabay.com/animation/2024/12/31/17/55/17-55-12-412_512.gif");
+    background-size: cover;
+    background-attachment: fixed;
+    animation: background-glow 10s infinite, body-glow 5s infinite;
+    box-shadow: 0 0 20px #800080, 0 0 40px #ff2e63, inset 0 0 50px #3532ec;
+    cursor: url('../files/cusour_pointer.png'), auto;
+}
+
+@keyframes background-glow {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(30deg);
+    }
+}
+
+@keyframes body-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px #800080, 0 0 40px #ff2e63, inset 0 0 50px #3532ec;
+    }
+    50% {
+        box-shadow: 0 0 30px #ff2e63, 0 0 60px #00ff95, inset 0 0 70px #800080;
+    }
+}
+
+.main-content {
+    flex: 1;
+    display: flex; /* Enables Flexbox for centering */
+    flex-direction: column; /* Aligns elements vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+    margin: 5% auto;
+    padding: 2.5rem;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 0 30px #800080, 0 0 50px #3532ec;
+    width: 80%;
+    margin-bottom: 8%;
+    margin-top: 5%;
+}
+
+table {
+    margin: 0 auto; /* Centers the table */
+    width: 100%; /* Ensures table spans full width */
+    height: auto; /* Allows table to adjust dynamically */
+}
+
+td {
+    display: flex; /* Enables Flexbox for table cells */
+    justify-content: center; /* Horizontally centers child elements */
+    align-items: center; /* Vertically centers child elements */
+    padding: 1rem; /* Space around the buttons */
+}
+
+.main-content button {
+    background: linear-gradient(45deg, #800080, #3532ec);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px; /* Button size */
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px #800080, 0 0 30px #3532ec;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 20%;
+}
+
+.main-content button:hover {
+    transform: scale(1.6);
+    box-shadow: 0 0 25px #ff2e63, 0 0 50px #1900ff;
+    cursor: url('../files/cusour_hover.png'), auto;
+}
+
+footer {
+    position: fixed; /* Keeps footer fixed at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(to bottom, #2c2c54, #800080);
+    color: blueviolet;
+    box-shadow: 0 0 15px #800080, 0 0 30px #ff2e63;
+    animation: footer-glow 5s infinite;
+    z-index: 1000;
+}
+
+@keyframes footer-glow {
+    0%, 100% {
+        box-shadow: 0 0 10px blueviolet, 0 0 20px #ff2e63;
+    }
+    50% {
+        box-shadow: 0 0 30px #800080, 0 0 50px #00ff95;
+    }
+}
+
+/* Navbar Styling */
+.navbar, nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background: linear-gradient(to bottom, #2c2c54, #800080);
+    box-shadow: 0px 0px 25px #800080;
+}
+
+.nav-links a, nav a {
+    text-decoration: none;
+    color: #00ff95;
+    font-family: monospace;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover, nav a:hover {
+    color: #ff2e63;
+    text-shadow: 0 0 10px #ff2e63;
+}
+
+nav .get-started {
+    background: linear-gradient(45deg, #3532ec, #800080);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    box-shadow: 0 0 15px #800080, 0 0 30px #3532ec;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+nav .get-started:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ff2e63, 0 0 50px #00ff95;
+}
+
+.main-content h2 {
+    font-size: 3rem;
+    color: #ff2e63;
+    text-shadow: 0 0 20px #ff2e63, 0 0 40px #00ff95;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 20px #ff2e63, 0 0 40px #00ff95;
+    }
+    50% {
+        text-shadow: 0 0 40px #ff2e63, 0 0 60px #00ff95;
+    }
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.feature {
+    width: 28%;
+    text-align: center;
+    background: rgba(86, 187, 198, 0.1);
+    padding: 20px 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #800080, 0 0 40px #3532ec;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #ff2e63, 0 0 60px #00ff95;
+}
