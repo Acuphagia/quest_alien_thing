@@ -1,4 +1,11 @@
 {
+  "name": "quest_alien_thing",
+  "version": "1.0.0",
+  "description": "A Tauri project",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
   "dependencies": {
     "@tauri-apps/api": "^2.5.0"
   }
