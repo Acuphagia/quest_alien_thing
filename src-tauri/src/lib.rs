@@ -56,10 +56,28 @@ fn chat_bot(question: &str, context: &str) -> String
         if let Some(answer) = answer_vec
             .get(0)
         {
+            let random_ending_text = if thread_rng()
+                .gen_range(0..2) == 0
+            {
+                "."
+            } else
+            {
+                "?"
+            };
+
             let reply_templates = [
-                format!("I- I don't really know, but according to some documents I found, the answer is probably {}.", answer.answer),
-                format!("Well, according to Internet Explorer, I’m guessing it's {}, but I could be wrong on that one.", answer.answer),
-                format!("Hold up, let me just look through my papers real quick... uhh, {}?", answer.answer),
+                format!("I- I don't really know, but according to some documents I found, the answer is probably {}{}", answer
+                    .answer, random_ending_text),
+                format!("Well, according to Internet Explorer, I’m guessing it's {}, but I could be wrong on that one.", answer
+                    .answer),
+                format!("Hold up, let me just look through my papers real quick... uhh, {}{}", answer
+                    .answer, random_ending_text),
+                format!("I think the answer is {}, but I’m not entirely sure, so don't take my word for it.", answer
+                    .answer),
+                format!("Oh.. That, yeah; it's uhh.. {}.", answer
+                    .answer),
+                format!("You are asking wayy too many questions for somebody at your rank, here, but i'll let it slide just this time, it's.. {}", answer
+                    .answer),
             ];
 
             let choice = thread_rng()
